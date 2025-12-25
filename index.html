@@ -5,1155 +5,35 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Googlies – GeM Tender Services</title>
-    
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+    <link rel="stylesheet" href="style.css">
     <!-- Owl Carousel -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Segoe UI", Arial, sans-serif;
-        }
 
-        body {
-            background: #f7f9fc;
-            color: #333;
-        }
-
-        /* ================= COMMON ================= */
-        .container {
-            max-width: 1200px;
-            margin: auto;
-            padding: 70px 20px;
-        }
-
-        h2 {
-            font-size: 36px;
-            color: #111;
-            margin-bottom: 15px;
-        }
-
-        p {
-            font-size: 15px;
-            line-height: 1.7;
-            color: #555;
-        }
-
-        .section-tag {
-            color: #cf2030;
-            font-weight: 600;
-            margin-bottom: 10px;
-            display: inline-block;
-        }
-
-        /* ================= DYNAMIC HERO SECTION WITH IMAGE SLIDER ================= */
-        .hero-section {
-            position: relative;
-            color: white;
-            text-align: center;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-
-        .hero-slideshow {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-        }
-
-        .slide-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            opacity: 0;
-            transition: opacity 1.5s ease-in-out;
-            transform: scale(1.05);
-            filter: brightness(0.7);
-        }
-
-        .slide-bg.active {
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        /* Lighter overlay for better image visibility */
-        .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg,
-                    rgba(0, 0, 0, 0.6) 0%,
-                    rgba(0, 0, 0, 0.4) 100%);
-            z-index: 1;
-        }
-
-        .hero-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-            padding: 40px 20px;
-            width: 100%;
-        }
-
-        .hero-tagline {
-            color: #cf2030;
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            background: rgba(0, 0, 0, 0.7);
-            display: inline-block;
-            padding: 12px 30px;
-            border-radius: 50px;
-            border: 2px solid rgba(207, 32, 48, 0.3);
-        }
-
-        .hero-text-slider {
-            min-height: 280px;
-            position: relative;
-            margin: 30px 0 50px 0;
-            overflow: hidden;
-        }
-
-        .text-slide {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 1s ease, transform 1s ease;
-            padding: 0 20px;
-        }
-
-        .text-slide.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .text-slide-headline {
-            font-size: 3.5rem;
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 25px;
-            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
-            animation: fadeInUp 1s ease-out;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .text-slide-quote {
-            font-size: 1.4rem;
-            line-height: 1.7;
-            max-width: 900px;
-            margin: 0 auto;
-            color: #fff;
-            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
-            background: rgba(0, 0, 0, 0.5);
-            padding: 20px 30px;
-            border-radius: 15px;
-            display: inline-block;
-            border-left: 4px solid #cf2030;
-            animation: fadeInUp 1.2s ease-out 0.3s both;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: #cf2030;
-            color: white;
-            border: none;
-            padding: 20px 50px;
-            border-radius: 50px;
-            font-size: 1.2rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            box-shadow: 0 10px 30px rgba(207, 32, 48, 0.3);
-            margin-top: 30px;
-            animation: fadeInUp 1.5s ease-out 0.6s both;
-        }
-
-        .cta-button:hover {
-            background: #b01c2a;
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 15px 35px rgba(207, 32, 48, 0.4);
-        }
-
-        /* Slide navigation dots */
-        .slider-controls {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-            margin-top: 50px;
-        }
-
-        .slider-dots {
-            display: flex;
-            gap: 15px;
-        }
-
-        .dot {
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.4);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .dot::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: #cf2030;
-            transition: left 4s linear;
-        }
-
-        .dot.active::after {
-            left: 0;
-        }
-
-        .dot:hover {
-            background: rgba(255, 255, 255, 0.8);
-            transform: scale(1.2);
-        }
-
-        .dot.active {
-            background: transparent;
-            border-color: #cf2030;
-            transform: scale(1.2);
-        }
-
-        /* Progress bar for auto-scroll */
-        .progress-bar {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            height: 4px;
-            background: #cf2030;
-            width: 100%;
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 4s linear;
-            z-index: 3;
-        }
-
-        .slide-bg.active .progress-bar {
-            transform: scaleX(1);
-        }
-
-        /* ================= WHY CHOOSE US ================= */
-        .why-grid {
-            margin-top: 50px;
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 35px;
-            align-items: center;
-        }
-
-        .why-card {
-            background: #fff;
-            border: 1px solid #e3e9f2;
-            border-radius: 14px;
-            padding: 25px;
-            display: flex;
-            gap: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-
-        .why-card i {
-            font-size: 40px;
-            color: #cf2030;
-            min-width: 45px;
-        }
-
-        .why-card h4 {
-            font-size: 16px;
-            margin-bottom: 5px;
-            color: #111;
-        }
-
-        .why-center {
-            text-align: center;
-            position: relative;
-        }
-
-        .why-center img {
-            max-width: 320px;
-            border-radius: 10px;
-        }
-
-        .why-badge {
-            position: absolute;
-            top: -45px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #fff;
-            border: 2px solid #cf2030;
-            border-radius: 50px;
-            padding: 8px 20px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .why-badge strong {
-            font-size: 20px;
-            color: #cf2030;
-            display: block;
-        }
-
-        /* ================= PRICING ================= */
-        .pay-section {
-            max-width: 1280px;
-            margin: auto;
-            padding: 70px 0px;
-        }
-
-        .pricing-title {
-            border-radius: 0 0 75px 75px;
-            padding: 20px 0;
-            background-color: #cf2030;
-            color: #e3e9f2;
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .plan {
-            background: #fff;
-            border: 1px solid #e3e9f2;
-            border-radius: 16px;
-            overflow: hidden;
-            position: relative;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s;
-        }
-
-        .plan:hover {
-            transform: translateY(-10px);
-        }
-
-        .plan.popular {
-            border: 2px solid #cf2030;
-        }
-
-        .ribbon {
-            position: absolute;
-            top: 18px;
-            right: -40px;
-            background: #cf2030;
-            color: #fff;
-            padding: 6px 45px;
-            font-size: 12px;
-            transform: rotate(45deg);
-            font-weight: 600;
-        }
-
-        .plan-header {
-            padding: 12px;
-            text-align: center;
-            border-bottom: 1px solid #eee;
-        }
-
-        .plan-header h3 {
-            color: #111;
-        }
-
-        .price {
-            font-size: 26px;
-            font-weight: 700;
-            color: #cf2030;
-        }
-
-        .price span {
-            font-size: 13px;
-            display: block;
-            color: #666;
-        }
-
-        .month {
-            font-size: 13px;
-            color: #777;
-            margin-top: 5px;
-        }
-
-        .plan ul {
-            list-style: none;
-            padding: 10px;
-        }
-
-        .plan ul li {
-            padding: 9px 0;
-            border-bottom: 1px dashed #e5e5e5;
-            font-size: 12px;
-        }
-
-        .plan ul li:last-child {
-            border: none;
-        }
-
-        /* ===== GREEN RIGHT TICK FOR PRICING FEATURES ===== */
-        .plan ul li {
-            position: relative;
-            padding-left: 12px;
-            /* space for tick */
-        }
-
-        /* green tick icon */
-        .plan ul li::before {
-            content: "✔";
-            position: absolute;
-            left: 0;
-            top: 10px;
-            color: #2ecc71;
-            /* green */
-            font-size: 13px;
-            font-weight: bold;
-            line-height: 1.4;
-        }
-
-        /* optional: stronger green for unlimited */
-        .plan ul li strong {
-            color: #2ecc71;
-        }
-
-        .plan button {
-            margin: 20px;
-            width: calc(100% - 40px);
-            padding: 12px;
-            border: none;
-            border-radius: 50px;
-            background: #cf2030;
-            color: #fff;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        .plan button:hover {
-            background: #b01c2a;
-        }
-
-        /* ===== CUSTOMIZED PLAN BOX ===== */
-        .custom-plan-box {
-            margin-top: 40px;
-            padding: 20px 25px;
-            background: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
-            border-top: 4px solid #cf2030;
-        }
-
-        .custom-plan-box h3 {
-            font-size: 18px;
-            margin-bottom: 8px;
-            color: #cf2030;
-        }
-
-        .custom-plan-box p {
-            font-size: 14px;
-            line-height: 1.6;
-
-            color: #333;
-        }
-
-        .custom-plan-box .apply-btn {
-            display: inline-block;
-            margin-left: 6px;
-            padding: 4px 12px;
-            font-size: 13px;
-            color: #fff;
-            background: #cf2030;
-            border-radius: 20px;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .custom-plan-box .apply-btn:hover {
-            background: #155a9c;
-        }
-
-
-        /* ================= FAQ ================= */
-        .faq-wrap {
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 50px;
-            align-items: flex-start;
-        }
-
-        .faq-left h2 {
-            line-height: 1.2;
-        }
-
-        .faq-left img {
-            max-width: 100%;
-            margin-top: 30px;
-            border-radius: 10px;
-            object-fit: cover;
-            height: 300px;
-            width: 100%;
-        }
-
-        .faq-item {
-            background: #fff;
-            border: 1px solid #e3e9f2;
-            border-radius: 10px;
-            margin-bottom: 15px;
-            overflow: hidden;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-        }
-
-        .faq-question {
-            padding: 18px;
-            font-weight: 600;
-            display: flex;
-            justify-content: space-between;
-            cursor: pointer;
-            background: #f9f9f9;
-        }
-
-        .faq-question:hover {
-            background: #f0f0f0;
-        }
-
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            padding: 0 18px;
-            transition: 0.4s ease;
-            color: #555;
-        }
-
-        .faq-item.active .faq-answer {
-            max-height: 200px;
-            padding: 15px 18px;
-        }
-
-        .faq-item.active .faq-question {
-            color: #cf2030;
-        }
-
-        .faq-item.active .icon {
-            color: #cf2030;
-            transform: rotate(45deg);
-        }
-
-
-        /* ================= RESPONSIVE ================= */
-        @media (max-width: 1200px) {
-            .hero-container {
-                max-width: 1000px;
-            }
-
-            .text-slide-headline {
-                font-size: 3rem;
-            }
-
-            .text-slide-quote {
-                font-size: 1.3rem;
-            }
-        }
-
-        @media (max-width: 992px) {
-            .hero-section {
-                min-height: 90vh;
-            }
-
-            .text-slide-headline {
-                font-size: 2.8rem;
-            }
-
-            .text-slide-quote {
-                font-size: 1.2rem;
-                padding: 18px 25px;
-            }
-
-            .hero-tagline {
-                font-size: 1.1rem;
-                padding: 10px 25px;
-            }
-
-            .why-grid,
-            .faq-wrap {
-                grid-template-columns: 1fr;
-            }
-
-            .why-center {
-                order: -1;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .hero-section {
-                min-height: 85vh;
-            }
-
-            .text-slide-headline {
-                font-size: 2.5rem;
-                margin-bottom: 20px;
-            }
-
-            .text-slide-quote {
-                font-size: 1.1rem;
-                padding: 15px 20px;
-                max-width: 95%;
-            }
-
-            .hero-text-slider {
-                min-height: 240px;
-                margin: 25px 0 40px 0;
-            }
-
-            .cta-button {
-                padding: 18px 40px;
-                font-size: 1.1rem;
-            }
-
-            .hero-tagline {
-                font-size: 1rem;
-                letter-spacing: 2px;
-                padding: 8px 20px;
-            }
-
-            .dot {
-                width: 14px;
-                height: 14px;
-            }
-
-            .container {
-                padding: 50px 20px;
-            }
-
-            h2 {
-                font-size: 30px;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .hero-section {
-                min-height: 80vh;
-            }
-
-            .text-slide-headline {
-                font-size: 2.2rem;
-                line-height: 1.2;
-            }
-
-            .text-slide-quote {
-                font-size: 1rem;
-                padding: 12px 18px;
-                line-height: 1.5;
-            }
-
-            .hero-text-slider {
-                min-height: 220px;
-                margin: 20px 0 35px 0;
-            }
-
-            .cta-button {
-                padding: 16px 35px;
-                font-size: 1rem;
-                margin-top: 25px;
-            }
-
-            .hero-tagline {
-                font-size: 0.9rem;
-                letter-spacing: 1.5px;
-                padding: 6px 18px;
-            }
-
-            .slider-controls {
-                margin-top: 40px;
-            }
-
-            .dot {
-                width: 12px;
-                height: 12px;
-            }
-
-            .pricing-grid {
-                grid-template-columns: 1fr;
-            }
-
-            h2 {
-                font-size: 28px;
-            }
-
-            .why-center img {
-                max-width: 280px;
-            }
-
-            .why-badge {
-                top: -35px;
-                padding: 6px 15px;
-            }
-
-            .why-badge strong {
-                font-size: 18px;
-            }
-
-            .plan-header {
-                padding: 20px;
-            }
-
-            .price {
-                font-size: 22px;
-            }
-
-            .plan ul {
-                padding: 20px;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-        }
-
-        @media (max-width: 400px) {
-            .hero-section {
-                min-height: 75vh;
-            }
-
-            .text-slide-headline {
-                font-size: 1.8rem;
-            }
-
-            .text-slide-quote {
-                font-size: 0.9rem;
-                padding: 10px 15px;
-            }
-
-            .cta-button {
-                padding: 14px 30px;
-                font-size: 0.9rem;
-            }
-
-            .hero-tagline {
-                font-size: 0.8rem;
-                padding: 5px 15px;
-            }
-
-            .container {
-                padding: 40px 15px;
-            }
-
-            h2 {
-                font-size: 24px;
-            }
-
-            .why-card {
-                padding: 20px;
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .why-card i {
-                font-size: 35px;
-                margin-bottom: 10px;
-            }
-
-            .faq-left img {
-                height: 250px;
-            }
-
-            .faq-question {
-                padding: 15px;
-                font-size: 14px;
-            }
-
-            .faq-answer {
-                padding: 0 15px;
-                font-size: 14px;
-            }
-
-            .faq-item.active .faq-answer {
-                padding: 12px 15px;
-            }
-        }
-
-        /* Touch device optimizations */
-        @media (hover: none) and (pointer: coarse) {
-            .dot:hover {
-                transform: none;
-                background: rgba(255, 255, 255, 0.4);
-            }
-
-            .cta-button:hover {
-                transform: none;
-                box-shadow: 0 10px 30px rgba(207, 32, 48, 0.3);
-            }
-
-            .cta-button:active {
-                transform: scale(0.98);
-                background: #b01c2a;
-            }
-
-            .plan:hover {
-                transform: none;
-            }
-
-            .plan:active {
-                transform: translateY(-5px);
-            }
-        }
-
-        /* Reduced motion preference */
-        @media (prefers-reduced-motion: reduce) {
-
-            .slide-bg,
-            .text-slide,
-            .cta-button,
-            .dot,
-            .plan {
-                transition: none !important;
-                animation: none !important;
-            }
-
-            .slide-bg.active {
-                transform: none;
-            }
-
-            .text-slide.active {
-                transform: none;
-            }
-        }
-
-        /* jhere  */
-
-
-        /* ===== ROOT RESET (SAFE) ===== */
-        .gtc-wrap * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Segoe UI", Arial, sans-serif;
-        }
-
-        .gtc-wrap {
-            background: #f6f6f6;
-            color: #333;
-        }
-
-        /* ===== COMMON ===== */
-        .gtc-container {
-            width: 90%;
-            max-width: 1200px;
-            margin: auto;
-        }
-
-        /* ================= SERVICES ================= */
-
-        .gtc-services {
-            padding: 70px 0;
-            background: #ffffff;
-        }
-
-        .gtc-services-title h3 {
-            color: #c4161c;
-            font-size: 18px;
-            margin-bottom: 8px;
-        }
-
-        .gtc-services-title h2 {
-            font-size: 34px;
-            font-weight: 700;
-            color: #c4161c;
-            margin-bottom: 40px;
-        }
-
-        .gtc-service-card {
-            background: #fff;
-            border-radius: 30px 30px 30px 0;
-            padding: 30px 20px;
-            text-align: center;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, .12);
-        }
-
-        .gtc-service-card img {
-            width: 80px;
-            margin-bottom: 15px;
-        }
-
-        .gtc-service-card h4 {
-            font-size: 15px;
-            font-weight: 700;
-            color: #c4161c;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-        }
-
-        .gtc-service-card p {
-            font-size: 14px;
-            line-height: 22px;
-        }
-
-        .gtc-read-btn {
-            display: inline-block;
-            margin-top: 15px;
-            background: #c4161c;
-            color: #fff;
-            padding: 7px 24px;
-            border-radius: 30px;
-            font-size: 14px;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        /* Owl arrows (scoped) */
-        .gtc-service-slider .owl-nav button {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 38px;
-            height: 38px;
-            border-radius: 50%;
-            background: #c4161c !important;
-            color: #fff !important;
-        }
-
-        .gtc-service-slider .owl-prev {
-            left: -20px;
-        }
-
-        .gtc-service-slider .owl-next {
-            right: -20px;
-        }
-
-        .gtc-service-slider .owl-dots {
-            display: none;
-        }
-
-        /* ================= HERO ================= */
-
-        .gtc-hero {
-            background: linear-gradient(135deg, #c4161c, #9f1115);
-            padding: 80px 0;
-            color: #fff;
-        }
-
-        .gtc-hero-grid {
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 40px;
-            align-items: center;
-        }
-
-        .gtc-hero-content h1 {
-            font-size: 38px;
-            line-height: 50px;
-            margin-bottom: 15px;
-        }
-
-        .gtc-hero-content p {
-            font-size: 16px;
-            line-height: 26px;
-        }
-
-        .gtc-search-card {
-            background: #fff;
-            padding: 30px;
-            border-radius: 14px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, .3);
-        }
-
-        .gtc-tabs {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 15px;
-        }
-
-        .gtc-tabs button {
-            flex: 1;
-            padding: 10px;
-            border: 2px solid #c4161c;
-            background: #fff;
-            color: #c4161c;
-            border-radius: 8px;
-            font-weight: 600;
-        }
-
-        .gtc-tabs .gtc-active {
-            background: #c4161c;
-            color: #fff;
-        }
-
-        .gtc-search-row {
-            display: flex;
-            gap: 10px;
-        }
-
-        .gtc-search-row input {
-            flex: 1;
-            padding: 12px;
-            border-radius: 8px;
-            border: 1px solid #ccc;
-        }
-
-        .gtc-search-row button {
-            background: #c4161c;
-            color: #fff;
-            border: none;
-            padding: 12px 24px;
-            border-radius: 8px;
-            font-weight: 600;
-        }
-
-        .gtc-inquiry-btn {
-            width: 100%;
-            margin-top: 15px;
-            background: #9f1115;
-            color: #fff;
-            border: none;
-            padding: 12px;
-            border-radius: 8px;
-            font-weight: 700;
-        }
-
-        /* ================= WHY ================= */
-
-        .gtc-why {
-            padding: 70px 0;
-            background: #ffffff;
-        }
-
-        .gtc-why-title {
-            text-align: center;
-            margin-bottom: 45px;
-        }
-
-        .gtc-why-title h2 {
-            font-size: 32px;
-            color: #c4161c;
-            margin-bottom: 10px;
-        }
-
-        .gtc-why-title p {
-            max-width: 850px;
-            margin: auto;
-            font-size: 15px;
-        }
-
-        .gtc-features {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
-
-        .gtc-feature-box {
-            background: #fff;
-            border-radius: 14px;
-            padding: 28px;
-            box-shadow: 0 8px 22px rgba(0, 0, 0, .12);
-            border-top: 6px solid #c4161c;
-        }
-
-        .gtc-feature-box i {
-            font-size: 28px;
-            color: #c4161c;
-            margin-bottom: 12px;
-        }
-
-        .gtc-feature-box h4 {
-            font-size: 18px;
-            margin-bottom: 6px;
-        }
-
-        /* ================= CTA ================= */
-
-        .gtc-cta {
-            background: #c4161c;
-            color: #fff;
-            padding: 70px 0;
-            text-align: center;
-        }
-
-        .gtc-cta h2 {
-            font-size: 30px;
-            margin-bottom: 12px;
-        }
-
-        .gtc-cta p {
-            max-width: 850px;
-            margin: auto;
-            font-size: 15px;
-        }
-
-        .gtc-cta button {
-            margin-top: 20px;
-            background: #fff;
-            color: #c4161c;
-            border: none;
-            padding: 14px 36px;
-            font-size: 15px;
-            font-weight: 700;
-            border-radius: 40px;
-        }
-
-        /* ================= RESPONSIVE ================= */
-
-        @media(max-width:900px) {
-            .gtc-hero-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .gtc-features {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
 </head>
 
 <body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <img src="imgs/Googlies_Logo_1.png" alt="Logo">
+        </div>
+
+        <p>
+            Get Ready to Change The Way You Bid.
+            <span>Your Growth, Our Mission.</span>
+            Let’s turn opportunities into success —
+            <strong>Book Your Consultation Today!</strong>
+        </p>
+    </nav>
+
+
     <!-- ================= DYNAMIC HERO SECTION WITH IMAGE SLIDER ================= -->
     <section class="hero-section">
         <!-- Background Image Slideshow -->
@@ -1216,7 +96,7 @@
         <!-- Text Content -->
         <div class="hero-container">
             <div class="hero-tagline">
-                India's Premier Tender Support Specialist
+                India's Premier Tender Support Service
             </div>
 
             <div class="hero-text-slider">
@@ -1332,12 +212,367 @@
         </div>
     </section>
 
+
+
+
+
+
+
+
+
+    <!-- SERVICES -->
+    <section class="gtc-services">
+        <div class="gtc-container">
+
+            <div class="gtc-services-title">
+                <h3>— We guide you to place a successful tender bid</h3>
+                <h2>Our Services</h2>
+                <img src="imgs/Googlies_Logo_1.png" alt="">
+            </div>
+
+            <div class="owl-carousel gtc-service-slider">
+
+                <div class="gtc-service-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/476/476863.png">
+                    <h4>GeM Registration</h4>
+                    <p>Registering on GeM opens the door to a broad market of government departments, public sector
+                        units, and other official organizations. By completing the registration...</p>
+                    <a href="#" class="gtc-read-btn">Read More</a>
+                </div>
+
+                <div class="gtc-service-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2910/2910791.png">
+                    <h4>GeM Profile Management</h4>
+                    <p>A well-optimized GeM profile improves your visibility, making it easier for government buyers to
+                        locate your offerings. A strong profile significantly boosts your chances...</p>
+                    <a href="#" class="gtc-read-btn">Read More</a>
+                </div>
+
+                <div class="gtc-service-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/942/942748.png">
+                    <h4>Product/Service Listings</h4>
+                    <p>Providing accurate and detailed product listings on GeM enhances the likelihood of selection by
+                        buyers. Proper categorization and complete descriptions ensure...</p>
+                    <a href="#" class="gtc-read-btn">Read More</a>
+                </div>
+
+                <div class="gtc-service-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1672/1672216.png">
+                    <h4>Vendor Assessment</h4>
+                    <p>Successfully completing vendor assessments on the RITES Portal strengthens your credibility and
+                        gives better access to government projects and large-scale contracts...</p>
+                    <a href="#" class="gtc-read-btn">Read More</a>
+                </div>
+
+                <div class="gtc-service-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/476/476863.png">
+                    <h4>Comprehensive Tender Document Analysis</h4>
+                    <p>Careful examination of tender documents ensures you completely understand all requirements,
+                        terms, and conditions outlined in the tender. This detailed study helps...</p>
+                    <a href="#" class="gtc-read-btn">Read More</a>
+                </div>
+
+                <div class="gtc-service-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2910/2910791.png">
+                    <h4>Tender Bidding Assistance</h4>
+                    <p>Our tender bidding support helps your organization comply with all technical, financial, and
+                        legal obligations required by government authorities, increasing the probability of success...
+                    </p>
+                    <a href="#" class="gtc-read-btn">Read More</a>
+                </div>
+
+                <div class="gtc-service-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/942/942748.png">
+                    <h4>Tender Information Services</h4>
+                    <p>We provide timely tender information services to ensure your business is aware of all relevant
+                        government tenders, helping you meet necessary compliance and documentation requirements...</p>
+                    <a href="#" class="gtc-read-btn">Read More</a>
+                </div>
+
+                <div class="gtc-service-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1672/1672216.png">
+                    <h4>Tender Results Updates</h4>
+                    <p>Our service provides updates on tender outcomes, ensuring you stay informed about your bid status
+                        and allowing your organization to plan future actions accordingly, maintaining compliance with
+                        all regulations...</p>
+                    <a href="#" class="gtc-read-btn">Read More</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+    <div class="bni-scroll-wrapper">
+        <div class="bni-scroll-track">
+
+            <!-- CARD 1 -->
+            <div class="bni-card">
+                <div class="bni-card-content">
+                    <h3 class="bni-card-title">Tender Updates</h3>
+                    <p class="bni-card-text">
+                        Receive up-to-date notifications on current and upcoming tenders with complete details on
+                        eligibility, work scope, technical requirements, submission deadlines, evaluation norms, and
+                        downloadable tender documents to ensure precise and confident participation.
+                    </p>
+                </div>
+                <div class="bni-card-image">
+                    <img src="https://cdn-icons-png.flaticon.com/512/942/942748.png" alt="Tender">
+                </div>
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="bni-card">
+                <div class="bni-card-content">
+                    <h3 class="bni-card-title">GeM Registration Assistance</h3>
+                    <p class="bni-card-text">
+                        Complete support for Government e-Marketplace registration, covering seller profile creation,
+                        document verification, bank and tax validation, mapping product categories, compliance checks,
+                        and seamless onboarding to enable smooth participation in government procurement processes.
+                    </p>
+                </div>
+                <div class="bni-card-image">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="GeM">
+                </div>
+            </div>
+
+            <!-- CARD 3 -->
+            <div class="bni-card">
+                <div class="bni-card-content">
+                    <h3 class="bni-card-title">Product & Service Catalogs</h3>
+                    <p class="bni-card-text">
+                        End-to-end creation and management of product and service catalogs with precise specifications,
+                        consistent descriptions, competitive pricing, correct classification, and compliance alignment
+                        to enhance visibility and approval rates on procurement portals.
+                    </p>
+                </div>
+                <div class="bni-card-image">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3500/3500833.png" alt="Catalog">
+                </div>
+            </div>
+
+            <!-- CARD 4 -->
+            <div class="bni-card">
+                <div class="bni-card-content">
+                    <h3 class="bni-card-title">Vendor Evaluation</h3>
+                    <p class="bni-card-text">
+                        Comprehensive vendor assessments covering financial health, technical capability, infrastructure
+                        readiness, statutory compliance, historical performance, and risk factors to meet both
+                        institutional and regulatory evaluation criteria.
+                    </p>
+                </div>
+                <div class="bni-card-image">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1828/1828640.png" alt="Assessment">
+                </div>
+            </div>
+
+            <!-- CARD 5 -->
+            <div class="bni-card">
+                <div class="bni-card-content">
+                    <h3 class="bni-card-title">Vendor Empanelment Support</h3>
+                    <p class="bni-card-text">
+                        Full guidance for vendor empanelment with banks, PSUs, and large organizations, including
+                        eligibility evaluation, preparation of documents, submission assistance, follow-up processes,
+                        and periodic renewal to maintain ongoing empanelment status.
+                    </p>
+                </div>
+                <div class="bni-card-image">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3595/3595455.png" alt="Empanelment">
+                </div>
+            </div>
+
+            <!-- CARD 6 -->
+            <div class="bni-card">
+                <div class="bni-card-content">
+                    <h3 class="bni-card-title">Tender Bidding Assistance</h3>
+                    <p class="bni-card-text">
+                        Complete tender bidding support including strategy planning, preparation of technical and
+                        commercial documents, compliance verification, structuring price bids, online submission, and
+                        monitoring deadlines to improve chances of successful bids.
+                    </p>
+                </div>
+                <div class="bni-card-image">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1006/1006555.png" alt="Bidding">
+                </div>
+            </div>
+
+            <!-- CARD 7 -->
+            <div class="bni-card">
+                <div class="bni-card-content">
+                    <h3 class="bni-card-title">Certification Assistance</h3>
+                    <p class="bni-card-text">
+                        Expert guidance for acquiring mandatory certifications like MSME, ISO, NSIC, and other statutory
+                        approvals, including documentation, application filing, audit coordination, and renewal support
+                        necessary for eligibility in institutional and government tenders.
+                    </p>
+                </div>
+                <div class="bni-card-image">
+                    <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Certification">
+                </div>
+            </div>
+
+            <!-- CARD 8 (Infinite Scroll Duplicate) -->
+            <div class="bni-card">
+                <div class="bni-card-content">
+                    <h3 class="bni-card-title">E-Procurement Assistance</h3>
+                    <p class="bni-card-text">
+                        Comprehensive support for multiple e-procurement platforms including vendor registration, bid
+                        creation, document uploads, tracking corrigenda, handling clarifications, and secure online
+                        submissions throughout the tender lifecycle.
+                    </p>
+                </div>
+                <div class="bni-card-image">
+                    <img src="https://cdn-icons-png.flaticon.com/512/942/942748.png" alt="Tender">
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+    <!-- Progressive Reveal Process Section -->
+    <section class="process-section" id="process">
+        <div class="container">
+            <div class="section-title">
+                <h2>A Transparent Roadmap to Tendering Success</h2>
+                <p class="section-subtitle" style="margin-bottom: 0;">
+                    Our approach is structured to be clear, efficient, and aimed at achieving tangible results for you.
+                </p>
+            </div>
+            <div class="process-grid">
+                <div class="process-timeline-nav">
+                    <div class="timeline-track">
+                        <div class="timeline-progress"></div>
+                    </div>
+                    <ul class="timeline-nav-list">
+                        <li class="timeline-nav-item" data-step="1">
+                            <a href="#step-1">
+                                <svg class="timeline-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <line x1="10" y1="9" x2="10" y2="9"></line>
+                                </svg>
+                                Evaluation
+                            </a>
+                        </li>
+                        <li class="timeline-nav-item" data-step="2">
+                            <a href="#step-2">
+                                <svg class="timeline-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                </svg>
+                                Confirmation
+                            </a>
+                        </li>
+                        <li class="timeline-nav-item" data-step="3">
+                            <a href="#step-3">
+                                <svg class="timeline-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <line x1="10" y1="9" x2="10" y2="9"></line>
+                                </svg>
+                                Documentation
+                            </a>
+                        </li>
+                        <li class="timeline-nav-item" data-step="4">
+                            <a href="#step-4">
+                                <svg class="timeline-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <line x1="12" y1="19" x2="12" y2="5"></line>
+                                    <polyline points="5 12 12 5 19 12"></polyline>
+                                </svg>
+                                Guidance
+                            </a>
+                        </li>
+                        <li class="timeline-nav-item" data-step="5">
+                            <a href="#step-5">
+                                <svg class="timeline-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path
+                                        d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 15a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm0-4a1 1 0 0 1 0-2V7">
+                                    </path>
+                                </svg>
+                                Support & Success
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="process-steps-content">
+                    <div class="step-content-card" id="step-1">
+                        <h3>Step 01: Evaluation</h3>
+                        <p>
+                            When a tender opportunity is received from Tenderkhabar.com or any other source, start by
+                            analyzing the product or service requirements. If the opportunity matches your offerings,
+                            forward it to your designated technical executive from our team.
+                        </p>
+                    </div>
+                    <div class="step-content-card" id="step-2">
+                        <h3>Step 02: Confirmation</h3>
+                        <p>
+                            If the tender details fit your capabilities and you wish to proceed, confirm with your
+                            technical executive. They will manage the process for that tender. For instance, if the
+                            tender is listed on the GeM portal, your product may need to be registered under the
+                            appropriate category with all required specifications.
+                        </p>
+                    </div>
+                    <div class="step-content-card" id="step-3">
+                        <h3>Step 03: Documentation</h3>
+                        <p>
+                            Your technical executive will prepare all necessary documents. When enrolling in our bidding
+                            service, your basic documents are collected and stored, eliminating repeated requests. For
+                            any additional documents, the executive will provide guidance in their preparation.
+                        </p>
+                    </div>
+                    <div class="step-content-card" id="step-4">
+                        <h3>Step 04: Guidance</h3>
+                        <p>
+                            Once the technical bid is completed, your technical executive will guide you through the
+                            price bid submission. Since pricing is confidential, they will provide remote assistance
+                            without requesting your actual price details.
+                        </p>
+                    </div>
+                    <div class="step-content-card" id="step-5">
+                        <h3>Step 05: Support & Success</h3>
+                        <p>
+                            After submission, we continue to offer full support, help address any clarifications, and
+                            guide you throughout the process until the final results are announced.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
     <!-- ================= WHY CHOOSE US ================= -->
     <section class="container" id="why">
         <span class="section-tag">Let's Know</span>
         <h2>Why Choose us?</h2>
         <p>
-            At Googlies, we redefine tender consultancy with precision, expertise,
+            At <strong style="color: #cf2030;"> Googlies</strong>, we redefine tender consultancy with precision,
+            expertise,
             and a results-driven approach. Our seasoned professionals specialize in
             transforming complex tender processes into seamless, winning strategies.
             We provide end-to-end support, from identifying the perfect
@@ -1419,48 +654,7 @@
 
     <div class="gtc-wrap">
 
-        <!-- SERVICES -->
-        <section class="gtc-services">
-            <div class="gtc-container">
 
-                <div class="gtc-services-title">
-                    <h3>— We can help you how to bid the tender</h3>
-                    <h2>Our Services</h2>
-                </div>
-
-                <div class="owl-carousel gtc-service-slider">
-
-                    <div class="gtc-service-card">
-                        <img src="https://cdn-icons-png.flaticon.com/512/476/476863.png">
-                        <h4>Vendor Assessment</h4>
-                        <p>Enhance your credibility and access large government projects.</p>
-                        <a href="#" class="gtc-read-btn">Read More</a>
-                    </div>
-
-                    <div class="gtc-service-card">
-                        <img src="https://cdn-icons-png.flaticon.com/512/2910/2910791.png">
-                        <h4>Tender Documents</h4>
-                        <p>Understand every requirement before bidding.</p>
-                        <a href="#" class="gtc-read-btn">Read More</a>
-                    </div>
-
-                    <div class="gtc-service-card">
-                        <img src="https://cdn-icons-png.flaticon.com/512/942/942748.png">
-                        <h4>Bidding Support</h4>
-                        <p>Full technical, financial & legal compliance.</p>
-                        <a href="#" class="gtc-read-btn">Read More</a>
-                    </div>
-
-                    <div class="gtc-service-card">
-                        <img src="https://cdn-icons-png.flaticon.com/512/1672/1672216.png">
-                        <h4>Tender Information</h4>
-                        <p>Daily verified tender updates.</p>
-                        <a href="#" class="gtc-read-btn">Read More</a>
-                    </div>
-
-                </div>
-            </div>
-        </section>
 
         <!-- HERO -->
         <section class="gtc-hero">
@@ -1469,7 +663,8 @@
 
                     <div class="gtc-hero-content">
                         <h1>Get All Tender Information Easily with Gem Tender Consultant</h1>
-                        <p>We help you find the right tender information from government, private and public projects.
+                        <p style="color: white;">We help you find the right tender information from government, private
+                            and public projects.
                         </p>
                     </div>
 
@@ -1497,7 +692,8 @@
 
                 <div class="gtc-why-title">
                     <h2>Why Choose Gem Tender Consultant?</h2>
-                    <p>We provide accurate, timely and verified tender information to help you win more bids.</p>
+                    <p style="color:black;">We provide accurate, timely and verified tender information to help you win
+                        more bids.</p>
                 </div>
 
                 <div class="gtc-features">
@@ -1533,8 +729,8 @@
         <!-- CTA -->
         <section class="gtc-cta">
             <div class="gtc-container">
-                <h2>Start Your Tender Journey With Confidence</h2>
-                <p>Join Gem Tender Consultant today and never miss a tender opportunity.</p>
+                <h2 style="color: white;">Start Your Tender Journey With Confidence</h2>
+                <p style="color: white;">Join Gem Tender Consultant today and never miss a tender opportunity.</p>
                 <button>Speak With Our Expert</button>
             </div>
         </section>
@@ -1972,6 +1168,80 @@
                 });
             });
         });
+
+
+        // --- Progressive Reveal Process Logic (from script1.js) ---
+        const timelineNavItems = document.querySelectorAll('.timeline-nav-item');
+        const stepContentCards = document.querySelectorAll('.step-content-card');
+        const timelineProgress = document.querySelector('.timeline-progress');
+        const processStepsContent = document.querySelector('.process-steps-content');
+
+        if (timelineNavItems.length > 0 && stepContentCards.length > 0 && timelineProgress && processStepsContent) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const stepId = entry.target.id;
+                        const stepNumber = stepId.split('-')[1];
+                        const correspondingNavItem = document.querySelector(`.timeline-nav-item[data-step="${stepNumber}"]`);
+
+                        timelineNavItems.forEach(item => item.classList.remove('is-active'));
+                        if (correspondingNavItem) {
+                            correspondingNavItem.classList.add('is-active');
+                        }
+                    }
+                });
+            }, { threshold: 0.6 });
+
+            stepContentCards.forEach(card => observer.observe(card));
+
+            const updateProgressBar = () => {
+                if (!processStepsContent) return;
+                const rect = processStepsContent.getBoundingClientRect();
+                const totalHeight = processStepsContent.scrollHeight - processStepsContent.clientHeight;
+                const scrolled = window.scrollY - processStepsContent.offsetTop;
+
+                let progress = 0;
+                if (totalHeight > 0) {
+                    progress = Math.min(1, Math.max(0, scrolled / totalHeight));
+                }
+
+                if (timelineProgress) {
+                    timelineProgress.style.setProperty('--progress-height', `${progress * 100}%`);
+                }
+            };
+
+            updateProgressBar();
+            window.addEventListener('scroll', updateProgressBar);
+            window.addEventListener('resize', updateProgressBar);
+        }
+
+        // --- FAQ Accordion Logic (from script1.js) ---
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const questionButton = item.querySelector('.faq-question');
+            const answerDiv = item.querySelector('.faq-answer');
+
+            questionButton.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                        otherItem.querySelector('.faq-answer').style.maxHeight = 0;
+                    }
+                });
+
+                if (!isActive) {
+                    item.classList.add('active');
+                    answerDiv.style.maxHeight = answerDiv.scrollHeight + 'px';
+                } else {
+                    item.classList.remove('active');
+                    answerDiv.style.maxHeight = 0;
+                }
+            });
+        });
+
     </script>
 </body>
 
