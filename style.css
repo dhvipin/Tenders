@@ -29,8 +29,8 @@
            padding: 0 40px;
 
            background: linear-gradient(135deg,
-                   rgba(255, 255, 255, 0.12),
-                   rgba(255, 255, 255, 0.03));
+                   rgba(27, 29, 53, 0.868),
+                   rgba(87, 48, 48, 0.891));
            backdrop-filter: blur(14px);
            -webkit-backdrop-filter: blur(14px);
 
@@ -235,7 +235,7 @@
        }
 
        .hero-text-slider {
-           min-height: 280px;
+           min-height: 445px;
            position: relative;
            margin: 30px 0 50px 0;
            overflow: hidden;
@@ -626,6 +626,10 @@
        }
 
 
+       /* contact us  */
+
+       
+
        /* ================= FAQ ================= */
        .faq-wrap {
            display: grid;
@@ -756,7 +760,7 @@
            }
 
            .hero-text-slider {
-               min-height: 240px;
+               min-height: 440px;
                margin: 25px 0 40px 0;
            }
 
@@ -802,7 +806,7 @@
            }
 
            .hero-text-slider {
-               min-height: 220px;
+               min-height: 455px;
                margin: 20px 0 35px 0;
            }
 
@@ -1137,7 +1141,7 @@
 
        .gtc-search-card {
            background: #fff;
-           padding: 30px;
+           padding: 24px;
            border-radius: 14px;
            box-shadow: 0 15px 35px rgba(0, 0, 0, .3);
        }
@@ -1551,6 +1555,20 @@
            top: 150px;
            /* background: url("./images/generated-image\ \(10\).png") no-repeat center center/cover ; */
            background-color: var(--primary-color);
+       }
+
+       #step-2{
+        background-color: rgb(184, 200, 95);
+       }
+
+       #step-3{
+        background-color: rgb(231, 231, 80);
+       }
+       #step-4{
+        background-color: rgb(255 177 238);
+       }
+       #step-5{
+        background-color: rgb(143 154 255);
        }
 
        .step-content-card h3 {
