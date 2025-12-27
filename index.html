@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <style>
         /* Add these styles to your existing CSS */
-          /* ================= GOOG LIES BOOKING FORM ================= */
+        /* ================= GOOG LIES BOOKING FORM ================= */
         .gl-booking-section {
             background: #ffffff;
             padding: 70px 20px;
@@ -188,6 +188,7 @@
                 flex-direction: column;
             }
         }
+
         /* ================= REDESIGNED HERO SECTION ================= */
         .hero-section.redesigned {
             background: linear-gradient(135deg, #0a1f3a 0%, #1a3a5f 100%);
@@ -195,7 +196,8 @@
             padding: 40px 20px;
             position: relative;
             overflow: hidden;
-            margin-top: 80px; /* Account for fixed navbar */
+            margin-top: 80px;
+            /* Account for fixed navbar */
         }
 
         .hero-section.redesigned .two-column {
@@ -211,7 +213,7 @@
         /* Image Column */
         .hero-image-column {
             position: relative;
-            width:500px;
+            width: 500px;
             height: 500px;
             border-radius: 20px;
             overflow: hidden;
@@ -358,22 +360,22 @@
                 grid-template-columns: 1fr;
                 gap: 30px;
             }
-            
+
             .hero-image-column {
-                width:400px;
+                width: 400px;
                 height: 400px;
                 order: 2;
             }
-            
+
             .hero-text-column {
                 order: 1;
                 text-align: center;
             }
-            
+
             .hero-text-column .text-slide-headline {
                 font-size: 2.2rem;
             }
-            
+
             .hero-section.redesigned {
                 margin-top: 70px;
                 min-height: auto;
@@ -384,17 +386,17 @@
         @media (max-width: 768px) {
             .hero-image-column {
                 height: 300px;
-                width:300px;
+                width: 300px;
             }
-            
+
             .hero-text-column .text-slide-headline {
                 font-size: 1.8rem;
             }
-            
+
             .hero-text-column .text-slide-quote {
                 font-size: 1.1rem;
             }
-            
+
             .hero-text-column .cta-button {
                 padding: 15px 35px;
                 font-size: 1.1rem;
@@ -404,153 +406,164 @@
         @media (max-width: 480px) {
             .hero-image-column {
                 height: 250px;
-                width:250px;
+                width: 250px;
             }
 
-            .hero-text-column .hero-text-slider{
+            .hero-text-column .hero-text-slider {
                 min-height: 440px;
             }
-            
+
             .hero-text-column .text-slide-headline {
                 font-size: 1.6rem;
             }
         }
 
         /* FIX FOR NAVBAR RESPONSIVENESS */
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: row !important; /* Force row layout */
-        align-items: center !important;
-        height: auto !important;
-        padding: 8px 12px !important;
-        gap: 8px !important;
-        justify-content: space-between !important;
-    }
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: row !important;
+                /* Force row layout */
+                align-items: center !important;
+                height: auto !important;
+                padding: 8px 12px !important;
+                gap: 8px !important;
+                justify-content: space-between !important;
+            }
 
-    .logo {
-        flex-shrink: 0;
-    }
+            .logo {
+                flex-shrink: 0;
+            }
 
-    .logo img {
-        height: 24px !important; /* Slightly larger for better visibility */
-    }
+            .logo img {
+                height: 24px !important;
+                /* Slightly larger for better visibility */
+            }
 
-    .navbar p {
-        font-size: 10px !important; /* Smaller font */
-        line-height: 1.3 !important;
-        max-width: calc(100% - 40px) !important; /* Ensure it doesn't overflow */
-        white-space: normal !important;
-        overflow: visible !important;
-        text-overflow: unset !important;
-        text-align: left !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        display: -webkit-box !important;
-        -webkit-line-clamp: 3 !important; /* Show maximum 3 lines */
-        -webkit-box-orient: vertical !important;
-        overflow: hidden !important;
-        text-overflow: ellipsis !important;
-    }
+            .navbar p {
+                font-size: 10px !important;
+                /* Smaller font */
+                line-height: 1.3 !important;
+                max-width: calc(100% - 40px) !important;
+                /* Ensure it doesn't overflow */
+                white-space: normal !important;
+                overflow: visible !important;
+                text-overflow: unset !important;
+                text-align: left !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                display: -webkit-box !important;
+                -webkit-line-clamp: 3 !important;
+                /* Show maximum 3 lines */
+                -webkit-box-orient: vertical !important;
+                overflow: hidden !important;
+                text-overflow: ellipsis !important;
+            }
 
-    /* Hide complex parts on very small screens */
-    @media (max-width: 480px) {
-        .navbar p span {
-            display: none !important; /* Hide the span text */
+            /* Hide complex parts on very small screens */
+            @media (max-width: 480px) {
+                .navbar p span {
+                    display: none !important;
+                    /* Hide the span text */
+                }
+
+                .navbar p strong {
+                    display: none !important;
+                    /* Hide the strong text */
+                }
+
+                .navbar p {
+                    font-size: 9px !important;
+                    -webkit-line-clamp: 2 !important;
+                    /* Reduce to 2 lines */
+                }
+            }
         }
-        
-        .navbar p strong {
-            display: none !important; /* Hide the strong text */
+
+        /* Add this to ensure the redesigned hero section doesn't conflict */
+        @media (max-width: 992px) {
+            .hero-section.redesigned {
+                margin-top: 70px !important;
+                /* Adjust based on navbar height */
+            }
         }
-        
-        .navbar p {
-            font-size: 9px !important;
-            -webkit-line-clamp: 2 !important; /* Reduce to 2 lines */
+
+        @media (max-width: 768px) {
+            .hero-section.redesigned {
+                margin-top: 65px !important;
+                /* Further adjustment for mobile */
+            }
         }
-    }
-}
-
-/* Add this to ensure the redesigned hero section doesn't conflict */
-@media (max-width: 992px) {
-    .hero-section.redesigned {
-        margin-top: 70px !important; /* Adjust based on navbar height */
-    }
-}
-
-@media (max-width: 768px) {
-    .hero-section.redesigned {
-        margin-top: 65px !important; /* Further adjustment for mobile */
-    }
-}
 
 
-/* FIX FOR GTC SERVICES TITLE RESPONSIVENESS */
-@media (max-width: 992px) {
-    .gtc-services-title {
-        grid-template-columns: 1fr !important; /* Single column on tablet */
-        grid-template-rows: auto auto auto;
-        row-gap: 20px !important;
-        column-gap: 0 !important;
-        text-align: center !important;
-    }
+        /* FIX FOR GTC SERVICES TITLE RESPONSIVENESS */
+        @media (max-width: 992px) {
+            .gtc-services-title {
+                grid-template-columns: 1fr !important;
+                /* Single column on tablet */
+                grid-template-rows: auto auto auto;
+                row-gap: 20px !important;
+                column-gap: 0 !important;
+                text-align: center !important;
+            }
 
-    .gtc-services-title h3 {
-        justify-self: center !important;
-        text-align: center !important;
-        grid-row: 1;
-        font-size: 16px !important;
-        margin-bottom: 0 !important;
-    }
+            .gtc-services-title h3 {
+                justify-self: center !important;
+                text-align: center !important;
+                grid-row: 1;
+                font-size: 16px !important;
+                margin-bottom: 0 !important;
+            }
 
-    .gtc-services-title h2 {
-        justify-self: center !important;
-        text-align: center !important;
-        grid-row: 2;
-        font-size: 28px !important;
-        margin-bottom: 10px !important;
-    }
+            .gtc-services-title h2 {
+                justify-self: center !important;
+                text-align: center !important;
+                grid-row: 2;
+                font-size: 28px !important;
+                margin-bottom: 10px !important;
+            }
 
-    .gtc-services-title img {
-        justify-self: center !important;
-        grid-row: 3;
-        width: 160px !important;
-        height: 40px !important;
-        margin-top: 10px !important;
-    }
-}
+            .gtc-services-title img {
+                justify-self: center !important;
+                grid-row: 3;
+                width: 160px !important;
+                height: 40px !important;
+                margin-top: 10px !important;
+            }
+        }
 
-@media (max-width: 768px) {
-    .gtc-services {
-        padding: 50px 0 !important;
-    }
+        @media (max-width: 768px) {
+            .gtc-services {
+                padding: 50px 0 !important;
+            }
 
-    .gtc-services-title {
-        padding: 0 15px !important;
-    }
+            .gtc-services-title {
+                padding: 0 15px !important;
+            }
 
-    .gtc-services-title h2 {
-        font-size: 24px !important;
-    }
+            .gtc-services-title h2 {
+                font-size: 24px !important;
+            }
 
-    .gtc-services-title h3 {
-        font-size: 14px !important;
-    }
+            .gtc-services-title h3 {
+                font-size: 14px !important;
+            }
 
-    .gtc-services-title img {
-        width: 140px !important;
-        height: 35px !important;
-    }
-}
+            .gtc-services-title img {
+                width: 140px !important;
+                height: 35px !important;
+            }
+        }
 
-@media (max-width: 480px) {
-    .gtc-services-title h2 {
-        font-size: 22px !important;
-        margin-bottom: 5px !important;
-    }
+        @media (max-width: 480px) {
+            .gtc-services-title h2 {
+                font-size: 22px !important;
+                margin-bottom: 5px !important;
+            }
 
-    .gtc-services-title h3 {
-        font-size: 13px !important;
-    }
-}
+            .gtc-services-title h3 {
+                font-size: 13px !important;
+            }
+        }
     </style>
 </head>
 
@@ -684,7 +697,7 @@
                 </div>
 
                 <a href="#plans" class="cta-button">Explore Our Tender Support Plans</a>
-                
+
                 <!-- Combined slider controls -->
                 <div class="slider-controls combined">
                     <div class="slider-dots">
@@ -693,7 +706,7 @@
                 </div>
             </div>
 
-                        <div class="hero-image-column">
+            <div class="hero-image-column">
                 <div class="hero-image-slider">
                     <!-- Use your actual image file paths here -->
                     <div class="hero-image-slide active">
@@ -744,7 +757,7 @@
             <div class="owl-carousel gtc-service-slider">
 
                 <div class="gtc-service-card">
-                    <img src="https://cdn-icons-png.flaticon.com/512/476/476863.png">
+                    <img src="https://cdn-icons-png.flaticon.com/512/942/942748.png">
                     <h4>GeM Registration</h4>
                     <p>Registering on GeM opens the door to a broad market of government departments, public sector
                         units, and other official organizations. By completing the registration...</p>
@@ -752,7 +765,7 @@
                 </div>
 
                 <div class="gtc-service-card">
-                    <img src="https://cdn-icons-png.flaticon.com/512/2910/2910791.png">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1828/1828466.png">
                     <h4>GeM Profile Management</h4>
                     <p>A well-optimized GeM profile improves your visibility, making it easier for government buyers to
                         locate your offerings. A strong profile significantly boosts your chances...</p>
@@ -760,15 +773,15 @@
                 </div>
 
                 <div class="gtc-service-card">
-                    <img src="https://cdn-icons-png.flaticon.com/512/942/942748.png">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2921/2921222.png">
                     <h4>Product/Service Listings</h4>
                     <p>Providing accurate and detailed product listings on GeM enhances the likelihood of selection by
                         buyers. Proper categorization and complete descriptions ensure...</p>
-                    <a href="#" class="gtc-read-btn">Read More</a>
+                    <a href="Product-ServiceListing.html" class="gtc-read-btn">Read More</a>
                 </div>
 
                 <div class="gtc-service-card">
-                    <img src="https://cdn-icons-png.flaticon.com/512/1672/1672216.png">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
                     <h4>Vendor Assessment</h4>
                     <p>Successfully completing vendor assessments on the RITES Portal strengthens your credibility and
                         gives better access to government projects and large-scale contracts...</p>
@@ -776,7 +789,7 @@
                 </div>
 
                 <div class="gtc-service-card">
-                    <img src="https://cdn-icons-png.flaticon.com/512/476/476863.png">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3039/3039386.png">
                     <h4>Comprehensive Tender Document Analysis</h4>
                     <p>Careful examination of tender documents ensures you completely understand all requirements,
                         terms, and conditions outlined in the tender. This detailed study helps...</p>
@@ -784,29 +797,63 @@
                 </div>
 
                 <div class="gtc-service-card">
-                    <img src="https://cdn-icons-png.flaticon.com/512/2910/2910791.png">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1570/1570102.png">
                     <h4>Tender Bidding Assistance</h4>
                     <p>Our tender bidding support helps your organization comply with all technical, financial, and
                         legal obligations required by government authorities, increasing the probability of success...
                     </p>
-                    <a href="#" class="gtc-read-btn">Read More</a>
+                    <a href="Tender-Bidding-Support.html" class="gtc-read-btn">Read More</a>
                 </div>
 
                 <div class="gtc-service-card">
-                    <img src="https://cdn-icons-png.flaticon.com/512/942/942748.png">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2830/2830284.png">
                     <h4>Tender Information Services</h4>
                     <p>We provide timely tender information services to ensure your business is aware of all relevant
                         government tenders, helping you meet necessary compliance and documentation requirements...</p>
-                    <a href="te" class="gtc-read-btn">Read More</a>
+                    <a href="TENDER-INFORMATION-SERVICES.html" class="gtc-read-btn">Read More</a>
                 </div>
 
                 <div class="gtc-service-card">
-                    <img src="https://cdn-icons-png.flaticon.com/512/1672/1672216.png">
+                    <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png">
                     <h4>Tender Results Updates</h4>
                     <p>Our service provides updates on tender outcomes, ensuring you stay informed about your bid status
                         and allowing your organization to plan future actions accordingly, maintaining compliance with
                         all regulations...</p>
                     <a href="TenderResult-info.html" class="gtc-read-btn">Read More</a>
+                </div>
+
+                <!-- AGAIN -->
+                <!-- 
+                <div class="gtc-service-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3271/3271001.png">
+                    <h4>Deemed Oem Panel Activation</h4>
+                    <p>Activating the Deemed OEM panel allows you to bid for larger government contracts that require
+                        you to be listed as an OEM or...</p>
+                    <a href="de" class="gtc-read-btn">Read More</a>
+                </div> -->
+
+                <div class="gtc-service-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2637/2637622.png">
+                    <h4>GeM Tender Floating</h4>
+                    <p>By floating tenders on GeM, you make your products or services available to a large pool of
+                        government buyers across various...</p>
+                    <a href="GeM-TENDER-FLOATING.html" class="gtc-read-btn">Read More</a>
+                </div>
+
+                <div class="gtc-service-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1968/1968641.png">
+                    <h4>Brand Listing</h4>
+                    <p>A well-maintained brand listing on GeM boosts your business’s profile and helps your brand get
+                        discovered by government...</p>
+                    <a href="BRAND-LISTING.html" class="gtc-read-btn">Read More</a>
+                </div>
+
+                <div class="gtc-service-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/942/942799.png">
+                    <h4>Invoice Generation & Order Tracking</h4>
+                    <p>Generating invoices promptly and tracking orders ensures that you get paid on time and that there
+                        are no discrepancies...</p>
+                    <a href="INVOICE-GENERATION.html" class="gtc-read-btn">Read More</a>
                 </div>
 
             </div>
@@ -1062,16 +1109,16 @@
         <h2>Why Choose us?</h2>
         <p>
             At <strong style="color: #cf2030;"> Googlies</strong>,
-            We redefine tender consultancy with precision, industry expertise, 
-            and a results-driven strategy. Our experienced professionals specialize 
-            in simplifying complex tender processes and transforming them into 
-            high-success bidding solutions. We offer complete end-to-end tender 
-            support, from identifying high-value opportunities to preparing 
-            compelling, customized bids that maximize win rates. With deep knowledge 
+            We redefine tender consultancy with precision, industry expertise,
+            and a results-driven strategy. Our experienced professionals specialize
+            in simplifying complex tender processes and transforming them into
+            high-success bidding solutions. We offer complete end-to-end tender
+            support, from identifying high-value opportunities to preparing
+            compelling, customized bids that maximize win rates. With deep knowledge
             across multiple industries and a commitment to excellence, Googlies
-             helps your business stand out in highly competitive tender environments. 
-             Partner with Googlies for innovative tender solutions, cost-effective 
-             strategies, and a proven track record of securing high-value contracts.
+            helps your business stand out in highly competitive tender environments.
+            Partner with Googlies for innovative tender solutions, cost-effective
+            strategies, and a proven track record of securing high-value contracts.
         </p>
 
         <div class="why-grid">
@@ -1168,41 +1215,84 @@
         <!-- WHY -->
         <section class="gtc-why">
             <div class="gtc-container">
-                <div class="gtc-why-title">
-                    <h2>Why Choose Gem Tender Consultant?</h2>
-                    <p style="color:black;">We provide accurate, timely and verified tender information to help you win
-                        more bids.</p>
+                <div class="gtc-why-header">
+                    <h2>Why Choose Googlies?</h2>
+                    <p class="subtitle">We provide accurate, timely and verified tender information to help you win more
+                        bids with confidence and efficiency.</p>
                 </div>
 
-                <div class="gtc-features">
-                    <div class="gtc-feature-box"><i class="fa fa-bell"></i>
-                        <h4>Daily Updates</h4>
-                        <p>Real-time tender alerts.</p>
+                <div class="gtc-features-grid">
+                    <div class="gtc-feature-card">
+                        <div class="feature-icon-wrapper">
+                            <i class="fas fa-bell"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h4>Daily Updates</h4>
+                            <p>Get real-time tender alerts delivered directly to your dashboard</p>
+                        </div>
+                        <div class="feature-number">01</div>
                     </div>
-                    <div class="gtc-feature-box"><i class="fa fa-check-circle"></i>
-                        <h4>Verified Data</h4>
-                        <p>Accurate and trusted information.</p>
+
+                    <div class="gtc-feature-card">
+                        <div class="feature-icon-wrapper">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h4>Verified Data</h4>
+                            <p>Accurate and trusted information verified by our expert team</p>
+                        </div>
+                        <div class="feature-number">02</div>
                     </div>
-                    <div class="gtc-feature-box"><i class="fa fa-layer-group"></i>
-                        <h4>All Categories</h4>
-                        <p>Government & private tenders.</p>
+
+                    <div class="gtc-feature-card">
+                        <div class="feature-icon-wrapper">
+                            <i class="fas fa-layer-group"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h4>All Categories</h4>
+                            <p>Comprehensive coverage of government & private tenders</p>
+                        </div>
+                        <div class="feature-number">03</div>
                     </div>
-                    <div class="gtc-feature-box"><i class="fa fa-user-shield"></i>
-                        <h4>Easy Access</h4>
-                        <p>User-friendly dashboard.</p>
+
+                    <div class="gtc-feature-card">
+                        <div class="feature-icon-wrapper">
+                            <i class="fas fa-user-shield"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h4>Easy Access</h4>
+                            <p>User-friendly dashboard with intuitive navigation</p>
+                        </div>
+                        <div class="feature-number">04</div>
                     </div>
-                    <div class="gtc-feature-box"><i class="fa fa-headset"></i>
-                        <h4>Expert Support</h4>
-                        <p>Guidance from professionals.</p>
+
+                    <div class="gtc-feature-card">
+                        <div class="feature-icon-wrapper">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h4>Expert Support</h4>
+                            <p>Personalized guidance from industry professionals</p>
+                        </div>
+                        <div class="feature-number">05</div>
                     </div>
-                    <div class="gtc-feature-box"><i class="fa fa-trophy"></i>
-                        <h4>Higher Win Rate</h4>
-                        <p>Better bidding strategy.</p>
+
+                    <div class="gtc-feature-card">
+                        <div class="feature-icon-wrapper">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h4>Higher Win Rate</h4>
+                            <p>Strategic insights for better bidding outcomes</p>
+                        </div>
+                        <div class="feature-number">06</div>
                     </div>
                 </div>
+
+
             </div>
         </section>
-
+        <div id="glToast" class="gl-toast"></div>
         <!-- CTA -->
         <section class="gtc-cta">
             <div class="gtc-container">
@@ -1346,7 +1436,7 @@
 
 
     <!-- contact  -->
-     <!-- ================= GOOGLIES BOOKING FORM ================= -->
+    <!-- ================= Googlies BOOKING FORM ================= -->
     <section class="gl-booking-section" id="gl-booking">
         <div class="gl-booking-title">
             <h2>Book Your Consultation Today</h2>
@@ -1428,7 +1518,7 @@
             </form>
         </div>
     </section>
-     
+
 
     <!-- [FAQ SECTION - EXACTLY AS YOU HAVE IT] -->
     <section class="container" id="faq">
@@ -1528,7 +1618,7 @@
             const imageSlides = document.querySelectorAll(".hero-image-slide");
             const textSlides = document.querySelectorAll(".hero-text-column .text-slide");
             const dotsContainer = document.querySelector(".slider-controls.combined .slider-dots");
-            
+
             let currentSlide = 0;
             const totalSlides = Math.min(imageSlides.length, textSlides.length);
             let slideTimer = null;
@@ -1595,7 +1685,7 @@
                     clearInterval(slideTimer);
                     slideTimer = null;
                 });
-                
+
                 heroSection.addEventListener("mouseleave", () => {
                     startAutoScroll();
                 });
@@ -1714,5 +1804,42 @@
             }
         });
     </script>
+    <script>
+        document.getElementById("glBookingForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const form = this;
+            const toast = document.getElementById("glToast");
+
+            fetch("submit-booking.php", {
+                method: "POST",
+                body: new FormData(form)
+            })
+                .then(res => res.json())
+                .then(data => {
+
+                    toast.textContent = data.message;
+                    toast.classList.remove("error");
+                    toast.classList.add("show");
+
+                    if (data.status === "error") {
+                        toast.classList.add("error");
+                    } else {
+                        form.reset(); // reset only on success
+                    }
+
+                    // auto-hide toast
+                    setTimeout(() => {
+                        toast.classList.remove("show");
+                    }, 4000);
+                })
+                .catch(() => {
+                    toast.textContent = "Something went wrong. Please try again.";
+                    toast.classList.add("show", "error");
+                    setTimeout(() => toast.classList.remove("show"), 4000);
+                });
+        });
+    </script>
 </body>
+
 </html>
